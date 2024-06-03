@@ -1,14 +1,12 @@
 # replicate-ds-error
 
-This API project was generated using MS3's [Camel OpenAPI Archetype](https://github.com/MS3Inc/camel-archetypes), version 0.2.8-SNAPSHOT.
-
 This project replicates an error with 'Datasonnet expression not initialized' in a project with a large amount of DataSonnet files.
 
 ## To replicate error:
 1. Clone this project and cd to it.
 2. Stop running all currently running Java applications.
 3. Run application in debug mode with VM arguments where max heap is very small: `-Xmx70m`
-4. Put breakpoint on org.apache.camel.language.datasonnet.DatasonnetExpression class, line 137.
+4. Put breakpoint on `org.apache.camel.language.datasonnet.DatasonnetExpression` class, line 137.
 5. Execute `./curl.sh` to call the GET endpoint a bunch of times
 6. Take note of size of the `language.mapperCache.size()` at the breakpoint above: 103 items. Remove the breakpoint, let the program resume.
 7. Note the eventual error of 'Datasonnet expression not initialized'. Run the script a few times if necessary, or cancel the script if it shows up early.
