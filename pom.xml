@@ -17,7 +17,7 @@
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
         <spring-boot.version>3.2.4</spring-boot.version>
-        <camel.version>4.5.0</camel.version>
+        <camel.version>4.0-M1</camel.version>
         <opentelemetry-agent.version>1.25.1</opentelemetry-agent.version>
     </properties>
 
