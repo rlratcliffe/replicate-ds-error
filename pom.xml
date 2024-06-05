@@ -21,16 +21,6 @@
         <opentelemetry-agent.version>1.25.1</opentelemetry-agent.version>
     </properties>
 
-    <repositories>
-        <repository>
-            <id>github-ms3-extensions</id>
-            <url>https://maven.pkg.github.com/ms3inc/camel-rest-extensions</url>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
-
     <dependencyManagement>
         <dependencies>
             <!-- Override Log4j2, related to https://github.com/spring-projects/spring-boot/issues/33450 -->
@@ -132,14 +122,7 @@
         <dependency>
             <groupId>com.ms3-inc.tavros</groupId>
             <artifactId>camel-rest-extensions</artifactId>
-            <version>0.1.7-SNAPSHOT</version>
-            <exclusions>
-                <!-- https://github.com/spring-projects/spring-framework/issues/20611 -->
-                <exclusion>
-                    <groupId>commons-logging</groupId>
-                    <artifactId>commons-logging</artifactId>
-                </exclusion>
-            </exclusions>
+            <version>0.1.4</version>
         </dependency>
 
         <dependency>
