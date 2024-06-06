@@ -18,7 +18,6 @@
         <maven.compiler.target>21</maven.compiler.target>
         <spring-boot.version>3.2.4</spring-boot.version>
         <camel.version>4.5.0</camel.version>
-        <opentelemetry-agent.version>1.25.1</opentelemetry-agent.version>
     </properties>
 
     <dependencyManagement>
@@ -125,11 +124,6 @@
             <version>0.1.4</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.apache.camel.springboot</groupId>
-            <artifactId>camel-opentelemetry-starter</artifactId>
-        </dependency>
-
         <!-- Test -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -200,31 +194,6 @@
                         <goals>
                             <goal>repackage</goal>
                         </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-dependency-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>copy-javaagent</id>
-                        <phase>process-resources</phase>
-                        <goals>
-                            <goal>copy</goal>
-                        </goals>
-                        <configuration>
-                            <artifactItems>
-                                <artifactItem>
-                                    <groupId>io.opentelemetry.javaagent</groupId>
-                                    <artifactId>opentelemetry-javaagent</artifactId>
-                                    <version>${opentelemetry-agent.version}</version>
-                                    <overWrite>true</overWrite>
-                                    <outputDirectory>${project.build.directory}/javaagents</outputDirectory>
-                                    <destFileName>javaagent.jar</destFileName>
-                                </artifactItem>
-                            </artifactItems>
-                        </configuration>
                     </execution>
                 </executions>
             </plugin>

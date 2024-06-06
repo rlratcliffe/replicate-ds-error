@@ -1,6 +1,5 @@
 package dev.rlratcliffe;
 
-import org.apache.camel.opentelemetry.starter.CamelOpenTelemetry;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -10,7 +9,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author Maven Archetype (camel-oas-archetype)
  */
 @SpringBootApplication
-@CamelOpenTelemetry
 public class CamelApplication {
 
     /**
