@@ -2,6 +2,8 @@
 
 This project replicates an error with 'Datasonnet expression not initialized' in a project with a large amount of DataSonnet files.
 
+Related to: https://issues.apache.org/jira/browse/CAMEL-20841
+
 ## To replicate error:
 1. Clone this project and cd to it.
 2. Stop running all currently running Java applications.
