@@ -32,8 +32,9 @@ jobs:
           servers: '[{ "id": "github-pull", "username": "${{ github.actor }}", "password": "${{ secrets.GITHUB_TOKEN }}" }]'
 
       - name: Build 4.4.3-SNAPSHOT of camel datasonnet
-        working-directory: ./temp
         run: |
+          mkdir temp
+          cd temp
           git clone https://github.com/apache/camel.git
           cd camel
           git checkout camel-4.4.x
