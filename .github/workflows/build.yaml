@@ -31,6 +31,13 @@ jobs:
           repositories: '[{ "id": "github-pull", "url": "https://maven.pkg.github.com/ms3inc/camel-rest-extensions" }]'
           servers: '[{ "id": "github-pull", "username": "${{ github.actor }}", "password": "${{ secrets.GITHUB_TOKEN }}" }]'
 
+      - name: Build 4.4.3-SNAPSHOT of camel datasonnet
+        working-directory: ./temp
+        run: |
+          git clone https://github.com/apache/camel.git
+          cd camel
+          git checkout camel-4.4.x
+          mvn clean install --projects :camel-datasonnet --also-make -Psource-jar -DskipTests
 
       - name: Build and package project
         run: mvn clean install
