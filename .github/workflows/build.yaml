@@ -35,10 +35,9 @@ jobs:
         run: |
           mkdir temp
           cd temp
-          git clone --depth=400 -b camel-4.4.x https://github.com/apache/camel.git
+          git clone --depth=200 -b camel-4.4.x https://github.com/apache/camel.git
           cd camel
           git checkout b41ee31adbf6b0bb33b1f328c7d312058b72e5b0
-          git --no-pager log -1 --oneline
           mvn clean install --projects :camel-datasonnet --also-make -Psource-jar -DskipTests
 
       - name: Build and package project
